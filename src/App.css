@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding:0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Inter:wght@300&family=Lato:wght@300&family=Oswald:wght@300&family=Poppins:wght@200&family=Press+Start+2P&family=Roboto+Slab:wght@200;300&family=Roboto:wght@100&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Glegoo&family=Inter:wght@300&family=Lato:wght@300&family=Oswald:wght@300&family=Poppins:wght@200&family=Press+Start+2P&family=Roboto+Slab:wght@200;300&family=Roboto:wght@100&family=Tilt+Prism&display=swap');
+
+.home{
+  background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Header */
+.login-header{
+  height:100px;
+  z-index:6;
+}
+.blur-elements{
+  z-index:1;
+ 
+}
+@keyframes fadecolor {
+  0%{
+    height:400px;
+    width:400px;
+  }
+  100%{
+    height:300px;
+    width:300px;
+  }
+  
+}
+/*blur elements  */
+#element-1{
+  height:300px;
+  width:300px;
+  background-image: radial-gradient(rgb(230, 235, 235),rgb(21, 142, 134),rgba(100, 239, 195, 0.377),rgba(100, 239, 195, 0.377),rgba(244, 244, 244, 0.459));
+  z-index:3;
+  border-radius:50%;
+  top:400px;
+  left:30px;
+  animation:fadecolor 3s ease-in-out alternate infinite;
+}
+#element-2{
+  height:300px;
+  width:300px;
+  /* background-color: #0bfcac; */
+  background-image: radial-gradient(rgb(230, 235, 235),rgb(21, 142, 134),rgba(100, 239, 195, 0.377),rgba(100, 239, 195, 0.377),rgba(244, 244, 244, 0.459));
+  z-index:3;
+  border-radius:50%;
+  top:160px;
+  right:30px;
+  animation:fadecolor 3s ease-in-out alternate infinite;
+}
+
+
+
+/* Main section */
+
+.home-main-sec{
+  min-height:100vh;
+  padding-top:100px;
+  
+}
+.main{
+  z-index:4;
+  height:100vh;
+  backdrop-filter:blur(10px);
+  font-family: 'Glegoo', serif;
+}
+.main-sec>h3{
+  font-size:55px;
+}
+.main-sec>h1{
+  font-size:65px;
+}
+
+
+.form-control,.getstarted{
+  border-radius:0px !important;
+  line-height:25px;
+  backdrop-filter:blur(5px) !important;  
+}
+.form-control{
+  background-color: transparent !important;
+  color:white !important;
+  text-shadow:1px 1px 5px #fff !important;
+  font-size:22px;
+}
+label{
+  color:white;
+}
+.form-floating{
+  width: 640px;
+  color:white !important;
+  text-shadow:1px 1px 5px #fff !important;
+}
+.getstarted{ 
+  background-color: #09b5e5;
+  border:none;
+  padding:17px;
+  width:30%;
+  font-size:19px;
+} 
+.getstarted:hover{
+  background-color: #ffffff;
+  color:rgb(0, 0, 0);
+  transition: all 0.2s ease;
+  font-weight: 700;
+}
+.getstarted:active{
+  background-color: #09b5e5;
+}
+
+@media(max-width:767px){
+  .home-main-sec{
+    min-height: 60vh;
+  }
+  .main{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    min-height:70vh;
+    
+  }
+  .main-sec>h1{
+    font-size:45px;
+    text-align: center;
+  }
+  .main-sec>h3{
+    font-size:30px;
+  }
+  .form-floating{
+    width: 300px;
+  }
+  .input-sec{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+  }
+  .getstarted{
+   width:40%; 
+  }
+  #element-1{
+    height:100px;
+    width:100px;
+    top:470px;
+    left:5px;
+    animation:fadecolor 3s ease-in-out alternate infinite;
+  }
+  #element-2{
+    height:100px;
+    width:100px;
+    right:6px;
+    animation:fadecolor 3s ease-in-out alternate infinite;
+  }
+  @keyframes fadecolor {
+    0%{
+      height:150px;
+      width:150px;
+    }
+    100%{
+      height:100px;
+      width:100px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* Home Course section */
+.course-main{
+  background-image:url("https://cdn01.alison-static.net/public/html/site/img/homepage/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:100vh;
+}
+.course-1-left{
+  width:60%;
+ 
+  
+}
+.course-1-right{
+  width:70%;
+  height:40px;
+  min-height:100vh;
+  background-image:linear-gradient(85deg,#76bb399f,#56ae685a);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-course-card {
+  width:180px;
+  background-color: #ffffff;
+  height:180px;
+  border-radius:15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-course-card:hover{
+  transform: scale(1.1);
+}
+
+.course-popular-main{
+  min-height: 80vh;
+}
+
+.home-course-items{
+  border-radius:20px;
 }
