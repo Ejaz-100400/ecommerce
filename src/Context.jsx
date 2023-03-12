@@ -11,10 +11,11 @@ function ContextProvider({children}){
     const[currentuser,setcurrentuser]=React.useState()
     const[courses,setcourses]=React.useState([])
     const[randompick,setrandompick]=React.useState([])
-    const[light,setlight]=React.useState('dark')
+    const[light,setlight]=React.useState(false)
+    const[displaycourses,setdisplaycourses]=React.useState([])
 
     function handletheme(){
-        setlight(prev=>'dark')
+        setlight(prev=>!prev)
     }
     
     function Login(email,password){
@@ -34,12 +35,18 @@ React.useEffect(()=>{
     }
 },[location.pathname,courses])
 
-console.log(randompick)
+function displaycoursedetail(displaycourses){
+    setdisplaycourses(prev=>[...prev,displaycourses]);
+    sessionStorage.setItem('courses',JSON.stringify(displaycourses));
+}
 
-   
-
+React.useEffect(()=>{
+    if(location.pathname!='/userpg/coursename'){
+        setdisplaycourses(()=>[])
+    }
+},[location.pathname])
     return(
-        <Context.Provider value={{currentuser,Login,randompick,courses,light,handletheme}}>
+        <Context.Provider value={{currentuser,Login,randompick,courses,light,handletheme,displaycoursedetail,displaycourses}}>
             {children}
         </Context.Provider>
     )

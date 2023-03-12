@@ -9,7 +9,7 @@ import { Context } from "../../Context";
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
-export default function MainPg(){
+export default function MainPg(props){
     const{randompick}=React.useContext(Context)
     const [carousel,setcarousel]=React.useState([])
 
@@ -46,7 +46,8 @@ export default function MainPg(){
     })
 
     return(
-        <main className='user-mainpg-section m-5 p-4 container overflow-hidden'>
+
+        <main className='user-mainpg-section  px-3 py-4 container' id={props.light?'dark':'light'}>
             {/* Carousel Section */}
             <section className='carousel-sec'>
             <h3 className="fw-bold">Our New Courses</h3>
@@ -65,8 +66,8 @@ export default function MainPg(){
 
             {/* Popular Courses */}
             <section className="user-activities position-relative mt-4 py-3">
-                <h1 className="">Our Top Picks for You</h1>
-                <div className='toppick-item position-relative d-flex mt-5'>
+                <h3 className="">Our Top Picks for You</h3>
+                <div className='toppick-item position-relative d-flex mt-2'>
                     <div className='course-img skeleton-courseimg' style={{backgroundImage:`linear-gradient(115deg,rgba(0, 0, 0, 0.902),rgba(0, 0, 0, 0.521),rgba(0, 0, 0, 0.607)),url(${randompick.img})`}}>
                     </div>
                     <div className='course-desc p-3'>
@@ -82,9 +83,9 @@ export default function MainPg(){
                     </div>
                  </div>
                  <div className='course-btns d-flex gap-3 align items-center mt-3'>
-                        <button className='btn btn-primary'>
+                        <Link className='btn btn-primary' to={'/userpg/coursename'}>
                             Explore Now!
-                        </button>
+                        </Link>
                         <button className='btn btn-primary'>
                             Add to cart
                         </button>

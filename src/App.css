@@ -375,8 +375,8 @@ border-radius:10px;
 
 /* USER HOME PAGE */
 
-.fa-moon{
-  right:20px;
+.theme-controller{
+  right:10px;
   top:10px;
   font-size:34px;
   color:white;
@@ -389,34 +389,45 @@ border-radius:10px;
   background-color: #0A171C;
 
 }
-/* #dark{
+#dark{
   background-color: #0A171C;
+  color:white;
+  transition: all 0.2s ease-in;
 }
 #light{
-  background-color: rgb(255, 255, 255);
-} */
+  background-color: whitesmoke;
+  color:black;
+  transition: all 0.2s ease-in;
+}
 .logo{
   font-size:30px;
   margin-top:20px;
   position: relative;
   top:10px;
   left:-1px;
-  color:rgb(255, 255, 255) !important;
+  /* color:rgb(255, 255, 255) !important; */
   cursor:pointer;
   font-family: 'Tilt Prism';
-  text-shadow: 15px -5px 15px rgba(255, 255, 255, 0.51);
+  /* text-shadow: 15px -5px 15px rgba(255, 255, 255, 0.51);
+  text-shadow: 15px -5px 15px rgba(31, 30, 30, 0.51); */
 }
+
+
+
 .user-header-section{
+  display:flex;
   width:18%;
+}
+.mob-header{
+  display:none;
 }
 .user-menu,.user-menu>a{
   font-size:20px;
-  color:white;
   font-weight:300;
 }
 .prem-card{
   border-radius:20px;
-  background-color: rgb(241, 244, 250);
+  background: linear-gradient(85deg,#76bb399f,#2fcd4fc8);
   width:250px;
   height:260px;
   bottom:0px;
@@ -425,7 +436,6 @@ border-radius:10px;
 .prem-btn {
   border-radius: 50%;
   background-color: #1042f7;
-  color:white;
   left:35%;
   top:-10%;
   font-size: 20px;
@@ -447,9 +457,11 @@ border-radius:10px;
   text-align: center;
 }
 
+
 .user-mainpg-section{
-  height:700px;
+  height:650px;
   width:60%;
+  margin:60px 30px;
   border-radius:20px;
   background-color: rgb(240,245,255);
   overflow-y: scroll;
@@ -462,9 +474,7 @@ border-radius:10px;
   width:11px;
   background-color: #02a2e1;
 }
-.user-mainpg-section>div{
-  height:300px;
-}
+
 .toppick-item{
   min-width:100%;
   border:1px solid black;
@@ -481,6 +491,7 @@ border-radius:10px;
 }
 
 
+
 /* Main sec */
 
 .carousel-sec{
@@ -489,10 +500,10 @@ border-radius:10px;
 }
 
 .userbanner-sec{
-  height:230px;
-  min-width:100%;
-  background-size: cover;
+  height:200px;
+  min-width: 100%;;
   border-radius:0px;
+  background-size: cover;
 }
 #img1{
   background-image:linear-gradient(115deg,rgba(54, 125, 94, 0.402),rgba(0, 0, 0, 0.521),rgba(0, 0, 0, 0.607)),url(https://cdn.dribbble.com/users/1624253/screenshots/16795522/media/4079a3135da026820ae5be66f724b35f.png?compress=1&resize=1000x750&vertical=top)
@@ -505,10 +516,17 @@ border-radius:10px;
 }
 .userbanner-sec>video{
   position:absolute;
-  min-height:100vh;
-  min-width:100%;
-  top:0px;
-  left:0px;
+  top:0;
+  left:0;
+  max-width: 50%;
+  min-height: 0%;
+  object-fit: cover;
+}
+.course-detail-sec{
+  height:300px;
+}
+.course-videothumb{
+  height: 200px;
 }
 .swiper-pagination-bullet{
   background-color: #09b5e5;
@@ -529,7 +547,35 @@ border-radius:10px;
   height:200px;
 }
 
-
+@media(max-width:968px){
+  .user-header-section{
+    display: none;
+  }
+  .mob-header{
+    display: block;
+  }
+  .user-mainpg-section{
+    width:100%;
+    margin-top:100px;
+    margin:70px 30px;
+    overflow-y: scroll;
+  }
+  .user-mainpg-section::-webkit-scrollbar{
+    width:5px;
+    background-color: #0A171C;
+  }
+  .toppick-item{
+    flex-wrap: wrap;
+    height:350px;
+  }
+  .course-img{
+    width:100%;
+    height:200px;
+  }
+  .course-desc>h3{
+    font-size:16px;
+  }
+}
 
 /* Course Component */
 
@@ -539,10 +585,10 @@ border-radius:10px;
 }
 
 .course-sec{
-  padding-top: 70px;
+  padding-top: 10px;
 }
 .courses-pg-item{
-  height:270px;
+  height:260px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -560,4 +606,65 @@ border-radius:10px;
 
 .btn-sec{
   bottom:10px;
+}
+
+@media(max-width:978px){
+  .courses-pg-item{
+    width:200px;
+    height:240px;
+  }
+}
+
+
+/* COURSE DETAIL COMPONENT */
+.course-maintitle{
+  background: linear-gradient(85deg,#76bb399f,#2fcd4fc8);
+  padding:50px 60px;
+}
+
+.coursetitle-img{
+  width:400px;
+  border-radius:10px;
+  box-shadow:4px 4px 10px black;
+}
+.maintitle-right{
+  width:300px;
+  height:200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.playbtn{
+  width:100%;
+  height:100%;
+  transition: all 0.2s ease-in-out;
+  opacity:0;
+}
+.playbtn:hover{
+  background-color: #0000009b;
+  opacity:1;
+}
+.fa-play{
+  padding:8px 10px;
+  color:white;
+  position: absolute;
+  top:50%;
+  left:50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+ 
+.learn-btn{
+  bottom:10px;
+  bottom:20px;
+  background-color: rgb(0,51,102);
+  color:rgb(255, 255, 255);
+  border-radius:4px;
+  border:none;
+  transition:all 0.2s ease-in-out;
+}
+
+.learn-btn:hover{
+  background-color:rgb(14, 106, 198) ;
 }
