@@ -1,0 +1,82 @@
+[{
+    _id:"1",
+    course_name:"Complete 2023 Web Development Bootcamp",
+    img:"https://img.freepik.com/free-vector/flat-web-development-concept-cms_23-2148806100.jpg",
+    duration:"11 hrs",
+    rating:"4.5"
+},
+{
+    _id:"2",
+    course_name:"All About Nodejs",
+    img:"https://wallpapercave.com/wp/wp6606915.jpg",
+    duration:"9 hrs",
+    rating:"4.4"
+},
+{
+    _id:"3",
+    course_name:"Learn Complete Front-End Development 2023",
+    img:"https://img-c.udemycdn.com/course/240x135/3442782_5f7f_2.jpg",
+    duration:"11 hrs",
+    rating:"4.5"
+},
+{
+    _id:"4",
+    course_name:"Complete 2023 Web Development Bootcamp",
+    img:"https://img-c.udemycdn.com/course/240x135/3442782_5f7f_2.jpg",
+    duration:"11 hrs",
+    rating:"4.5"
+},
+{
+    _id:"5",
+    course_name:"Complete 2023 Web Development Bootcamp",
+    img:"https://img-c.udemycdn.com/course/240x135/3442782_5f7f_2.jpg",
+    duration:"11 hrs",
+    rating:"4.5"
+}
+
+]
+
+[{
+    _id:"1",
+    categ_name:"Front End",
+},
+{
+    _id:"2",
+    categ_name:"Back End",
+},
+{
+    _id:"3",
+    categ_name:"Full Stack",
+},
+{
+    _id:"4",
+    categ_name:"ML",
+},
+{
+    _id:"5",
+    categ_name:"Data Science",
+}
+]
+
+
+{
+    _id:"1",
+    course_name:"Learn Front-End Web Development 2023",
+    img:"https://cdn.dribbble.com/users/1624253/screenshots/16795522/media/4079a3135da026820ae5be66f724b35f.png?compress=1&resize=1000x750&vertical=top",
+    duration:"11 hrs",
+    rating:"4.5"
+},
+{
+    _id:"2",
+    course_name:"Master Data Science",
+    img:"https://cdn.dribbble.com/users/1187002/screenshots/14959792/media/9959637980ba12af8d58d6a9d35ef31b.jpg?compress=1&resize=1000x750&vertical=top",
+    duration:"9 hrs",
+    rating:"4.4"
+},
+{
+    _id:"3",
+    course_name:"Create Web Application using React,Mongo DB & Express 2023",
+    img:"https://img-c.udemycdn.com/course/240x135/3442782_5f7f_2.jpg",
+    duration:"11 hrs",
+    rating:"4.5"
+},
