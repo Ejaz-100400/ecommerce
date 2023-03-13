@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from "react-router-dom";
 import { auth } from './firebase'
 const Context = React.createContext()
-
 export function useAuth(){
     return React.useContext(Context)
 }
@@ -13,6 +12,7 @@ function ContextProvider({children}){
     const[randompick,setrandompick]=React.useState([])
     const[light,setlight]=React.useState(false)
     const[displaycourses,setdisplaycourses]=React.useState([])
+    const[categorytype,setcategorytype]=React.useState([])
 
     function handletheme(){
         setlight(prev=>!prev)
@@ -35,6 +35,8 @@ React.useEffect(()=>{
     }
 },[location.pathname,courses])
 
+
+// Displaying the course details
 function displaycoursedetail(displaycourses){
     setdisplaycourses(prev=>[...prev,displaycourses]);
     sessionStorage.setItem('courses',JSON.stringify(displaycourses));
@@ -45,11 +47,23 @@ React.useEffect(()=>{
         setdisplaycourses(()=>[])
     }
 },[location.pathname])
+
+
+function displaycategory(coursename){
+    const filtercateg=courses.filter((course=>course.type === coursename))
+    setcategorytype(filtercateg)
+}
+console.log(categorytype)
+
+
     return(
-        <Context.Provider value={{currentuser,Login,randompick,courses,light,handletheme,displaycoursedetail,displaycourses}}>
+        <Context.Provider value={{currentuser,Login,randompick,courses,light,handletheme,displaycoursedetail,displaycourses,displaycategory}}>
             {children}
         </Context.Provider>
     )
 }
+
+
+
 
 export {ContextProvider, Context}

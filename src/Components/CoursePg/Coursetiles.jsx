@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 export default function Coursetiles(){
     const{courses,displaycoursedetail,displaycourses}=React.useContext(Context)
     console.log(displaycourses)
+    
+    // all courses
     const courselem = courses.map(courses => {
         return(
             <SwiperSlide>
@@ -27,9 +29,97 @@ export default function Coursetiles(){
             </SwiperSlide>
         )
     })
+
+    // Popular courses
+    const popelem = courses.filter(course=>course.category==='Popular Courses').map(courses => {
+        return(
+            <SwiperSlide>
+               <div className='courses-pg-item  position-relative mt-3'>
+                <img src={courses.img} alt="" className='skeleton' />
+                <div className='mt-2 px-2 w-100'>
+                <span className='course-title '>{courses.course_name}</span>
+                </div>
+                <div className='mt-1 px-2 position-absolute btn-sec'>
+                <span className='fw-bold'>₹{courses.cost}</span>
+                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                </div>
+                <div>
+                
+                </div>
+               </div>
+            </SwiperSlide>
+        )
+    })
+    
+    // Students courses
+    const studelem = courses.filter(course=>course.category==='Students are Viewing').map(courses => {
+        return(
+            <SwiperSlide>
+               <div className='courses-pg-item skeleton  position-relative mt-3'>
+                <img src={courses.img} alt="" className='skeleton' />
+                <div className='mt-2 px-2 w-100'>
+                <span className='course-title'>{courses.course_name}</span>
+                </div>
+                <div className='mt-1 px-2 position-absolute btn-sec'>
+                <span className='fw-bold'>₹{courses.cost}</span>
+                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                </div>
+                <div>
+                
+                </div>
+               </div>
+            </SwiperSlide>
+        )
+    })
+
+    // Dev courses
+    const develem = courses.filter(course=>course.category==='Demanding courses to become a Dev').map(courses => {
+        return(
+            <SwiperSlide>
+               <div className='courses-pg-item skeleton  position-relative mt-3'>
+                <img src={courses.img} alt="" className='skeleton' />
+                <div className='mt-2 px-2 w-100'>
+                <span className='course-title'>{courses.course_name}</span>
+                </div>
+                <div className='mt-1 px-2 position-absolute btn-sec'>
+                <span className='fw-bold'>₹{courses.cost}</span>
+                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                </div>
+                <div>
+                
+                </div>
+               </div>
+            </SwiperSlide>
+        )
+    })
+
+    // short courses
+    const shortelem = courses.filter(course=>course.category==='Short and Sweet Courses').map(courses => {
+        return(
+            <SwiperSlide>
+               <div className='courses-pg-item skeleton  position-relative mt-3'>
+                <img src={courses.img} alt="" className='skeleton' />
+                <div className='mt-2 px-2 w-100'>
+                <span className='course-title'>{courses.course_name}</span>
+                </div>
+                <div className='mt-1 px-2 position-absolute btn-sec'>
+                <span className='fw-bold'>₹{courses.cost}</span>
+                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                </div>
+                <div>
+                
+                </div>
+               </div>
+            </SwiperSlide>
+        )
+    })
+
+
+
+    
     return(
-        <div>
-               <div className="course-sec"> 
+        <div className=''>
+               <div className="course-sec container"> 
                {/* recommended */}
                 <h4 className='p-3'>Recommended for You</h4>
                 <Swiper
@@ -55,34 +145,10 @@ export default function Coursetiles(){
         className="mySwiper">
             {courselem}
         </Swiper>
-        {/* recommended */}
-        <h4 className='p-3'>Recommended for You</h4>
-                <Swiper
-         slidesPerView={4}
-         spaceBetween={10}
-        navigation={{
-            clickable: true,
-        }}
-         breakpoints={{
-            0:{
-                slidesPerView:2,
-                slidesPerGroup:1,
-                spaceBetween:150
-            },
-            768:{
-                slidesPerView:4,
-                spaceBetween:10
-            },
-           
-        }}
-        
-        modules={[Navigation]}
-        className="mySwiper">
-            {courselem}
-        </Swiper>
 
-        {/* recommended */}
-        <h4 className='p-3'>Recommended for You</h4>
+
+           {/* Popular Courses */}
+           <h4 className='p-3'>Popular Courses</h4>
                 <Swiper
          slidesPerView={4}
          spaceBetween={10}
@@ -104,12 +170,17 @@ export default function Coursetiles(){
         
         modules={[Navigation]}
         className="mySwiper">
-            {courselem}
+            {popelem}
         </Swiper>
 
 
-          {/* recommended */}
-          <h4 className='p-3'>Recommended for You</h4>
+
+
+
+
+
+        {/* Students courses */}
+        <h4 className='p-3'>Students are Viewing</h4>
                 <Swiper
          slidesPerView={4}
          spaceBetween={10}
@@ -131,10 +202,68 @@ export default function Coursetiles(){
         
         modules={[Navigation]}
         className="mySwiper">
-            {courselem}
+            {studelem}
+        </Swiper>
+
+
+          {/* Demanding courses */}
+          <h4 className='p-3'>Demanding courses to become a Dev</h4>
+                <Swiper
+         slidesPerView={4}
+         spaceBetween={10}
+        navigation={{
+            clickable: true,
+        }}
+         breakpoints={{
+            0:{
+                slidesPerView:2,
+                slidesPerGroup:1,
+                spaceBetween:150
+            },
+            768:{
+                slidesPerView:4,
+                spaceBetween:10
+            },
+           
+        }}
+        
+        modules={[Navigation]}
+        className="mySwiper">
+            {develem}
+        </Swiper>
+
+
+
+        {/* Short courses */}
+        <h4 className='p-3'>Short and Sweet Courses</h4>
+                <Swiper
+         slidesPerView={4}
+         spaceBetween={10}
+        navigation={{
+            clickable: true,
+        }}
+         breakpoints={{
+            0:{
+                slidesPerView:2,
+                slidesPerGroup:1,
+                spaceBetween:150
+            },
+            768:{
+                slidesPerView:4,
+                spaceBetween:10
+            },
+           
+        }}
+        
+        modules={[Navigation]}
+        className="mySwiper">
+            {shortelem}
         </Swiper>
               
             </div>
         </div>
+
+
+
     )
 }

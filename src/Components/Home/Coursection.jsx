@@ -32,10 +32,10 @@ export default function Coursection(){
       </div>
     )
   })
-  const popcategelements= popcateg.map((pop)=>{
+  const popcategelements= popcateg.filter(course=>course.category==='Popular Courses').map((pop)=>{
     return(
     <SwiperSlide>
-      <div className='home-pop-course-item p-3 d-flex flex-column gap-2 justify-content-center align'>
+      <div className='home-pop-course-item p-3 d-flex flex-column gap-2 justify-content-center align-items-center'>
         <img src={pop.img} alt={pop.course_name} width='100' />
         <h4 className='text-center'>{pop.course_name}</h4>
         <div className='course-desc d-flex justify-content-between mt-2'>

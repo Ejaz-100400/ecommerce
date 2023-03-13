@@ -1,8 +1,11 @@
+import React from "react"
 import { Link } from "react-router-dom"
+import { Context } from "../../Context"
 export default function UserHeader(props){
+    const {displaycategory,courses}=React.useContext(Context)
     return(
         <>
-        <header className='user-header-section  flex-column  gap-4 px-3' id={props.light?'light':'dark'}>
+        <header className='user-header-section  flex-column  gap-4 px-3'>
             <Link  to={'/userpg'} className="text-deoration-none">
             <span className={`fw-bold logo ${props.light?'text-dark':'text-light'}`} style={{textShadow:props.light?'15px -5px 15px rgba(31, 30, 30, 0.51)':'15px -5px 15px rgba(255, 255, 255, 0.51)'}}>FREND-WEB</span> 
             </Link>
@@ -14,7 +17,19 @@ export default function UserHeader(props){
                 <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-laptop-file"></i> Courses</li>
                 </Link>
                 <Link to={'/userpg/categ'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
-                <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-list"></i>Categories</li>
+                {/* <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-list"></i>Categories</li> */}
+                <li className="btn-group dropend d-flex gap-2 align-items-center">
+                    <span type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i className={`fa-solid fa-list ${props.light?'text-dark':'text-light'}`}></i>Categories
+                    </span>
+                    <ul className="dropdown-menu w-100 container p-3" id={props.light?'dark':'light'}>
+                        <li className="py-2 fw-bold category-title" onClick={()=>displaycategory(courses.type)}>Front-End Development</li>
+                        <li className="py-2 fw-bold category-title">Back-End Development</li>
+                        <li className="py-2 fw-bold category-title">Full-Stack Web Development</li>
+                        <li className="py-2 fw-bold category-title">Data Science</li>
+                        <li className="py-2 fw-bold category-title">Personal Skills</li>
+                    </ul>
+                </li>
                 </Link>
                 <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-arrow-up-right-dots"></i>My Learning</li>
                 <Link to={'/userpg/cart'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>

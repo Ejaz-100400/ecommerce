@@ -23,7 +23,7 @@ export default function CoursePg(){
         <Route path='/coursec' element={<Coursec light={light}/>}/>
         <Route path='/categ' element={<Categories light={light}/>}/>
         <Route path='/cart' element={<Cart light={light}/>}/>
-        <Route path='/coursename' element={<Coursedetail light={light}/>}/>
+        <Route path={`/coursename`} element={<Coursedetail light={light}/>}/>
         </Routes> 
         </div>
     )

@@ -421,6 +421,9 @@ border-radius:10px;
 .mob-header{
   display:none;
 }
+.category-title:hover{
+border-bottom:1px solid blue ;
+}
 .user-menu,.user-menu>a{
   font-size:20px;
   font-weight:300;
@@ -487,7 +490,6 @@ border-radius:10px;
   width:40%;
   background-size: cover;
   background-position: center;
-
 }
 
 
@@ -534,8 +536,20 @@ border-radius:10px;
 .swiper-pagination-bullet-active {
   background-color: #f1fc18 !important;
 }
-.swiper-button-prev {
+.swiper-button-prev,.swiper-button-next {
   color:yellow !important;
+  font-size:16px  !important;
+  background-color:rgb(18, 73, 128) !important;
+  padding:20px !important;
+  border-radius:50% !important;
+}
+.swiper-button-prev{
+  left:0px !important;
+}
+
+.swiper-button-prev::after,.swiper-button-next::after{
+  font-size: 13px !important;
+  font-weight: bold !important;;
 }
 
 .swiper-button-next {
@@ -588,7 +602,7 @@ border-radius:10px;
   padding-top: 10px;
 }
 .courses-pg-item{
-  height:260px;
+  height:300px;
   cursor: pointer;
   transition: all 0.2s ease;
 }

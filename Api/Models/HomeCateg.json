@@ -80,3 +80,103 @@
     duration:"11 hrs",
     rating:"4.5"
 },
+
+{
+    _id:"6",
+    course_name:"Full Stack Web Development | MERN Stack Project",
+    img:"https://images.prismic.io/loco-blogs/79328284-f97b-489f-924c-eb3b17e34b56_image2.png?auto=compress%2Cformat&rect=0%2C0%2C1999%2C1124&w=1920&h=1080&ar=1.91%3A1",
+    duration:"15 hrs",
+    rating:"4.5",
+    descpar:"",
+    cost:899,
+    category:"Demanding courses to become a Dev"
+},
+
+{
+    _id:"7",
+    course_name:"React from Front to Back",
+    img:"https://images.prismic.io/loco-blogs/79328284-f97b-489f-924c-eb3b17e34b56_image2.png?auto=compress%2Cformat&rect=0%2C0%2C1999%2C1124&w=1920&h=1080&ar=1.91%3A1",
+    duration:"9 hrs",
+    rating:"4.7",
+    descpar:"Learn modern React by building 4 projects including a Firebase 9 app and a full stack MERN app",
+    cost:699,
+    category:"Popular Courses"
+},
+
+{
+    _id:"8",
+    course_name:"Machine Learning A-Z: Python & R in Data Science [2023]",
+    img:"https://www.nice.com/-/media/niceincontact/page-content/blog/2022/12/how-machine-learning-is-transforming-intraday-management/how-machine-learning-is-transforming-intraday-management-banner.ashx?rev=7b6499e639024187aece027e645ecf87",
+    duration:"18 hrs",
+    rating:"4.5",
+    descpar:"Learn modern React by building 4 projects including a Firebase 9 app and a full stack MERN app",
+    cost:899,
+    category:"Students are Viewing"
+},
+
+
+{
+    _id:"9",
+    course_name:"SQL - MySQL for Data Analytics",
+    img:"https://www.teknologisk.dk/_/media/80034",
+    duration:"11 hrs",
+    rating:"4.6",
+    descpar:"Learn modern React by building 4 projects including a Firebase 9 app and a full stack MERN app",
+    cost:699,
+    category:"Popular Courses"
+},
+
+{
+    _id:"10",
+    course_name:"Complete JavaScript Course 2023: From Zero to Expert!",
+    img:"https://wallpaperaccess.com/full/1555172.jpg",
+    duration:"24 hrs",
+    rating:"4.7",
+    descpar:"The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+    cost:1199,
+    category:"Demanding courses to become a Dev"
+},
+
+{
+    _id:"11",
+    course_name:"Next.js - Dev to Deployment",
+    img:"https://uploads-ssl.webflow.com/5de91a35bbf4da085c26f8ca/620fae9da76371ac572a219a_BlogTechSEO.png",
+    duration:"10 hrs",
+    rating:"4.7",
+    descpar:"Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
+    cost:1199,
+    category:"Popular Courses"
+},
+
+{
+    _id:"12",
+    course_name:"Complete Machine Learning & Data Science Bootcamp 2023",
+    img:"https://media.istockphoto.com/id/1405263192/photo/data-science-concept.jpg?b=1&s=170667a&w=0&k=20&c=qhnwGTwgqiooabEFLAGr2A6vN28N37Rq0DIB9UifHK0=",
+    duration:"29.5 hrs",
+    rating:"4.7",
+    descpar:"Learn Data Science, Data Analysis, Machine Learning (Artificial Intelligence) and Python with Tensorflow, Pandas & more!",
+    cost:1399,
+    category:"Popular Courses"
+},
+
+{
+    _id:"13",
+    course_name:"Personality Development with Soft Skills",
+    img:"https://media.istockphoto.com/id/1405263192/photo/data-science-concept.jpg?b=1&s=170667a&w=0&k=20&c=qhnwGTwgqiooabEFLAGr2A6vN28N37Rq0DIB9UifHK0=",
+    duration:"5 hrs",
+    rating:"4.1",
+    descpar:"Transform your life in 30 Days to become Successful and Confident.",
+    cost:199,
+    category:"Short and Sweet Courses"
+},
+
+{
+    _id:"14",
+    course_name:"MongoDB - The Complete Developer's Guide 2023",
+    img:"https://media.istockphoto.com/id/1405263192/photo/data-science-concept.jpg?b=1&s=170667a&w=0&k=20&c=qhnwGTwgqiooabEFLAGr2A6vN28N37Rq0DIB9UifHK0=https://img-b.udemycdn.com/course/240x135/1906852_93c6_2.jpg",
+    duration:"12 hrs",
+    rating:"4.6",
+    descpar:"Master MongoDB Development for Web & Mobile Apps. CRUD Operations, Indexes, Aggregation Framework - All about MongoDB!",
+    cost:799,
+    category:"Students are Viewing"
+},
