@@ -18,9 +18,9 @@ export default function Coursetiles(){
                 <div className='mt-2 px-2 w-100'>
                 <span className='course-title'>{courses.course_name}</span>
                 </div>
-                <div className='mt-1 px-2 position-absolute btn-sec'>
-                <span className='fw-bold'>₹{courses.cost}</span>
-                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                <div className='mt-1 px-2 position-absolute btn-sec d-block'>
+                {/* <span className='fw-bold'>₹{courses.cost}</span> */}
+                <Link className=' mt-2 explore-btn px-1 py-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
                 </div>
                 <div>
                 
@@ -34,14 +34,14 @@ export default function Coursetiles(){
     const popelem = courses.filter(course=>course.category==='Popular Courses').map(courses => {
         return(
             <SwiperSlide>
-               <div className='courses-pg-item  position-relative mt-3'>
+               <div className='courses-pg-item skeleton position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
                 <span className='course-title '>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
-                <span className='fw-bold'>₹{courses.cost}</span>
-                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                {/* <span className='fw-bold'>₹{courses.cost}</span> */}
+                    <Link className='explore-btn px-1 py-2 mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
                 </div>
                 <div>
                 
@@ -61,8 +61,8 @@ export default function Coursetiles(){
                 <span className='course-title'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
-                <span className='fw-bold'>₹{courses.cost}</span>
-                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                {/* <span className='fw-bold'>₹{courses.cost}</span> */}
+                    <Link className='explore-btn px-1 py-2  mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
                 </div>
                 <div>
                 
@@ -82,8 +82,8 @@ export default function Coursetiles(){
                 <span className='course-title'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
-                <span className='fw-bold'>₹{courses.cost}</span>
-                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                {/* <span className='fw-bold'>₹{courses.cost}</span> */}
+                    <Link className='explore-btn px-1 py-2  mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
                 </div>
                 <div>
                 
@@ -103,8 +103,8 @@ export default function Coursetiles(){
                 <span className='course-title'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
-                <span className='fw-bold'>₹{courses.cost}</span>
-                    <Link className='btn btn-primary w-100 mt-2' to={'/userpg/coursename'} onClick={()=>displaycoursedetail(courses)}>Explore</Link>
+                {/* <span className='fw-bold'>₹{courses.cost}</span> */}
+                    <Link className='explore-btn px-1 py-2 w-100 mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
                 </div>
                 <div>
                 

@@ -395,7 +395,7 @@ border-radius:10px;
   transition: all 0.2s ease-in;
 }
 #light{
-  background-color: whitesmoke;
+  background-color: wheat;
   color:black;
   transition: all 0.2s ease-in;
 }
@@ -425,7 +425,7 @@ border-radius:10px;
 border-bottom:1px solid blue ;
 }
 .user-menu,.user-menu>a{
-  font-size:20px;
+  font-size:16px;
   font-weight:300;
 }
 .prem-card{
@@ -502,7 +502,7 @@ border-bottom:1px solid blue ;
 }
 
 .userbanner-sec{
-  height:200px;
+  height:250px;
   min-width: 100%;;
   border-radius:0px;
   background-size: cover;
@@ -609,17 +609,54 @@ border-bottom:1px solid blue ;
 .courses-pg-item:hover{
   background-image: linear-gradient(85deg,rgba(29, 239, 176, 0.591),rgba(216, 231, 49, 0.432));
   border:1px solid black;
+  transition: all 0.3s ease-in-out;
 }
 .course-title{
   font-size:16px;
   font-weight:500;
+}
+.explore-btn,.cart-btn{
+  border: 2px solid #1A1A1A;
+  border:3px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: flex;
+  background:linear-gradient(85deg,#76bb399f,#2fcd4fc8) ;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+.explore-btn:disabled {
+  pointer-events: none;
+}
+
+.explore-btn:hover {
+  color: #000000;
+  background-color: #eae619;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+.cart-btn:hover {
+  color: #ffffff;
+  background-color: #e92a19;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.explore-btn:active ,.cart-btn:active{
+  box-shadow: none;
+  transform: translateY(5px);
 }
 .courses-pg-item>img{
   width:100%;
 }
 
 .btn-sec{
-  bottom:10px;
+  bottom:20px;
 }
 
 @media(max-width:978px){
@@ -672,7 +709,7 @@ border-bottom:1px solid blue ;
 .learn-btn{
   bottom:10px;
   bottom:20px;
-  background-color: rgb(0,51,102);
+  background-color: rgb(46, 5, 193);
   color:rgb(255, 255, 255);
   border-radius:4px;
   border:none;
@@ -681,4 +718,11 @@ border-bottom:1px solid blue ;
 
 .learn-btn:hover{
   background-color:rgb(14, 106, 198) ;
+}
+
+.course-class-detail{
+  background-color: wheat !important;
+  padding:50px 60px;
+  backdrop-filter:blur(30px);
+  height:100%;
 }

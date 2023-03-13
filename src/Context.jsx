@@ -13,6 +13,7 @@ function ContextProvider({children}){
     const[light,setlight]=React.useState(false)
     const[displaycourses,setdisplaycourses]=React.useState([])
     const[categorytype,setcategorytype]=React.useState([])
+    const[btnactive,setbtnactive]=React.useState(false)
 
     function handletheme(){
         setlight(prev=>!prev)
@@ -36,6 +37,8 @@ React.useEffect(()=>{
 },[location.pathname,courses])
 
 
+
+
 // Displaying the course details
 function displaycoursedetail(displaycourses){
     setdisplaycourses(prev=>[...prev,displaycourses]);
@@ -49,15 +52,26 @@ React.useEffect(()=>{
 },[location.pathname])
 
 
-function displaycategory(coursename){
-    const filtercateg=courses.filter((course=>course.type === coursename))
+function displaycategory(categname){
+    const filtercateg=courses.filter((course=>course.type === categname))
+    sessionStorage.setItem('category',JSON.stringify(categname));
     setcategorytype(filtercateg)
 }
-console.log(categorytype)
 
 
     return(
-        <Context.Provider value={{currentuser,Login,randompick,courses,light,handletheme,displaycoursedetail,displaycourses,displaycategory}}>
+        <Context.Provider value={{
+            currentuser,
+            Login,
+            randompick,
+            courses,
+            light,
+            handletheme,
+            displaycoursedetail,
+            displaycourses,
+            displaycategory,
+            categorytype,
+            }}>
             {children}
         </Context.Provider>
     )

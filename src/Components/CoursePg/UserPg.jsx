@@ -4,6 +4,7 @@ import {Route,Routes} from 'react-router-dom'
 import MainPg from './MainPg'
 import Coursec from './Coursec'
 import Categories from './Category/Categories';
+import SearchCourse from './Search/SearchCourse';
 import Cart from './Cart/Cart';
 import UserHeader from './UserHeader'
 import Coursedetail from './Coursedetail/Coursedetail';
@@ -21,9 +22,10 @@ export default function CoursePg(){
         <Routes >
         <Route path='/' element={<MainPg light={light} className='mt-5'/>}/>
         <Route path='/coursec' element={<Coursec light={light}/>}/>
-        <Route path='/categ' element={<Categories light={light}/>}/>
+        <Route path='/categ/:categ_name' element={<Categories light={light}/>}/>
+        <Route path='/search' element={<SearchCourse light={light} />} />
         <Route path='/cart' element={<Cart light={light}/>}/>
-        <Route path={`/coursename`} element={<Coursedetail light={light}/>}/>
+        <Route path={`/:course_name`} element={<Coursedetail light={light}/>}/>
         </Routes> 
         </div>
     )

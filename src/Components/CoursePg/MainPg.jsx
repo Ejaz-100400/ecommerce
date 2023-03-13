@@ -10,7 +10,7 @@ import { Context } from "../../Context";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 export default function MainPg(props){
-    const{randompick}=React.useContext(Context)
+    const{randompick,displaycoursedetail}=React.useContext(Context)
     const [carousel,setcarousel]=React.useState([])
 
     React.useEffect(()=>{
@@ -38,7 +38,7 @@ export default function MainPg(props){
                     <span className="fw-bold text-light">{item.duration}</span>
                     </div>
                  </div>
-                 <button className="btn btn-primary mt-4 fw-bold">Explore!</button>
+                 <button className="explore-btn px-1 py-2 mt-4">Explore Now!</button>
                  </div>
                  </div>
             </SwiperSlide>
@@ -83,11 +83,11 @@ export default function MainPg(props){
                     </div>
                  </div>
                  <div className='course-btns d-flex gap-3 align items-center mt-3'>
-                        <Link className='btn btn-primary' to={'/userpg/coursename'}>
+                        <Link className='explore-btn px-1 py-2' to={`/userpg/${randompick.course_name}`} onClick={()=>displaycoursedetail(randompick)}>
                             Explore Now!
                         </Link>
-                        <button className='btn btn-primary'>
-                            Add to cart
+                        <button className='cart-btn px-2 py-2 d-flex align-items-center'>
+                            Add to cart <i class="fa-solid fa-cart-shopping"></i>
                         </button>
                     </div>
                     </div>

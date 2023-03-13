@@ -4,6 +4,9 @@ export default function Coursedetail(props){
     const {displaycourses}=React.useContext(Context);
     const coursestored=sessionStorage.getItem('courses')
     const coursextr=JSON.parse(coursestored)
+    // const uniqueContent = Array.from(new Set(coursextr.map((course) => course[0].content)));
+    // console.log(uniqueContent)
+
     const cours =<>
     <section className='course-maintitle d-flex gap-1  container-fluid position-relative skeleton'>
         <div className='w-75 maintitle-left'>
@@ -29,9 +32,10 @@ export default function Coursedetail(props){
             </div>
         </div> 
     </section>
+    <section className='course-class-detail  d-flex flex-column'>
+
+    </section>
         </>
-
-
     return(
         <main className='user-mainpg-section position-relative w-100 ' id={props.light?'dark':'light'}>
             {cours}
