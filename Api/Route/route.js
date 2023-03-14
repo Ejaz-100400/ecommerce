@@ -6,4 +6,5 @@ const router = express.Router();
 router.get('/CourseCateg',HomeCategController.DisplayCateg)
 router.get('/PopCateg',PopCategController.DisplayPop)
 router.get('/Carousel',CarouselController.DisplayCarousel)
+router.get('/search/:course_name',PopCategController.Searchcourse)
 module.exports = router;

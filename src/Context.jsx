@@ -13,7 +13,9 @@ function ContextProvider({children}){
     const[light,setlight]=React.useState(false)
     const[displaycourses,setdisplaycourses]=React.useState([])
     const[categorytype,setcategorytype]=React.useState([])
-    const[btnactive,setbtnactive]=React.useState(false)
+    const[query,setquery]=React.useState('')
+    const[searchdata,setsearchdata]=React.useState([])
+    const[load,setload]=React.useState(false)
 
     function handletheme(){
         setlight(prev=>!prev)
@@ -52,11 +54,23 @@ React.useEffect(()=>{
 },[location.pathname])
 
 
+// searching course in the search component
+function handleSearch(){
+    setload(true)
+    setInterval(()=>{
+        setload(false)
+    },2000)
+    fetch(`http://localhost:8050/search/${query}`)
+    .then(response => response.json())
+    .then(data=>setsearchdata(data.Coursearch))
+}
+// displaying course category in categories component
 function displaycategory(categname){
     const filtercateg=courses.filter((course=>course.type === categname))
     sessionStorage.setItem('category',JSON.stringify(categname));
     setcategorytype(filtercateg)
 }
+
 
 
     return(
@@ -71,6 +85,11 @@ function displaycategory(categname){
             displaycourses,
             displaycategory,
             categorytype,
+            handleSearch,
+            query,
+            setquery,
+            searchdata,
+            load
             }}>
             {children}
         </Context.Provider>
