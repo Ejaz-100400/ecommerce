@@ -721,10 +721,18 @@ border-bottom:1px solid blue ;
 }
 
 .course-class-detail{
-  background-color: wheat !important;
-  padding:50px 60px;
+  padding:50px 80px;
   backdrop-filter:blur(30px);
-  height:100%;
+  height:500px;
+  overflow-y: scroll;
+}
+
+.course-class-detail::-webkit-scrollbar{
+  width:5px;
+}
+.course-class-detail::-webkit-scrollbar-thumb{
+  width:10px;
+  background-color: red;
 }
 
 

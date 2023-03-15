@@ -9,19 +9,14 @@ export default function SearchCourse(props){
     return(
         <main className='user-mainpg-section px-3 py-4 container' id={props.light?'dark':'light'}> 
            <Searchbar/>  
-           <section className="d-flex gap-2 flex-wrap justify-content-center container mt-4">
-           <XyzTransitionGroup
-            appear
-            className="example-grid"
-            xyz="fade small out-down out-rotate-right appear-stagger"
-          >
+           <section className="d-flex gap-2 flex-wrap justify-content-center container mt-4" xyz='fade-small-stagger'>
             {load?
             <div class="spinner-grow text-primary" role="status">
             <span class="sr-only">Loading...</span>
             </div>:
             searchdata.map(searchitem=>{
                 return(
-                <div className='courses-pg-item skeleton card position-relative mt-3' id='searchcourse-item'>
+                <div className='courses-pg-item skeleton card position-relative mt-3 square xyz-in' id='searchcourse-item'>
                     <img src={searchitem.img} alt="" className='skeleton' />
                     <div className='mt-2 px-2 w-100'>
                         <span className='course-title'>{searchitem.course_name}</span>
@@ -34,7 +29,6 @@ export default function SearchCourse(props){
             </div>
                 )
             })}
-             </XyzTransitionGroup>
            </section>
         </main>
     )
