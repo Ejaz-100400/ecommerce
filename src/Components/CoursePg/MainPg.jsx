@@ -10,14 +10,14 @@ import { Context } from "../../Context";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 export default function MainPg(props){
-    const{randompick,displaycoursedetail}=React.useContext(Context)
+    const{randompick,displaycoursedetail,addtocart}=React.useContext(Context)
     const [carousel,setcarousel]=React.useState([])
 
     React.useEffect(()=>{
         fetch('http://localhost:8050/Carousel').
         then(response => response.json())
         .then(data=>setcarousel(data.Carousel))
-    })
+    },[])
 
     // returning top pick items 
 
@@ -86,9 +86,9 @@ export default function MainPg(props){
                         <Link className='explore-btn px-1 py-2' to={`/userpg/${randompick.course_name}`} onClick={()=>displaycoursedetail(randompick)}>
                             Explore Now!
                         </Link>
-                        <button className='cart-btn px-2 py-2 d-flex align-items-center'>
+                         <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(randompick)}>
                             Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
+                         </button>   
                     </div>
                     </div>
                 </div>

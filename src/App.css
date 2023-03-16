@@ -1,6 +1,7 @@
 *{
   margin: 0px;
   padding:0px;
+  scroll-behavior: smooth;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Inter:wght@300&family=Lato:wght@300&family=Oswald:wght@300&family=Poppins:wght@200&family=Press+Start+2P&family=Roboto+Slab:wght@200;300&family=Roboto:wght@100&family=Tilt+Prism&display=swap');
@@ -434,6 +435,7 @@ border-bottom:1px solid blue ;
   width:250px;
   height:260px;
   bottom:0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .prem-btn {
@@ -466,8 +468,9 @@ border-bottom:1px solid blue ;
   width:60%;
   margin:60px 30px;
   border-radius:20px;
-  background-color: rgb(240,245,255);
+  background: linear-gradient(85deg,#7de1259f,#56ae685a);
   overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .user-mainpg-section::-webkit-scrollbar{
   width:5px;
@@ -605,6 +608,8 @@ border-bottom:1px solid blue ;
   height:300px;
   cursor: pointer;
   transition: all 0.2s ease;
+  background-color:#0A171C;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .courses-pg-item:hover{
   background-image: linear-gradient(85deg,rgba(29, 239, 176, 0.591),rgba(216, 231, 49, 0.432));
@@ -653,6 +658,7 @@ border-bottom:1px solid blue ;
 }
 .courses-pg-item>img{
   width:100%;
+  height:150px;
 }
 
 .btn-sec{
@@ -669,7 +675,7 @@ border-bottom:1px solid blue ;
 
 /* COURSE DETAIL COMPONENT */
 .course-maintitle{
-  background: linear-gradient(85deg,#76bb399f,#2fcd4fc8);
+  background:#0A171C;
   padding:50px 60px;
 }
 
@@ -751,4 +757,28 @@ border-bottom:1px solid blue ;
     transform:scale(1);
     opacity:1;
   }
+}
+
+
+/* CART COMPONENT */
+
+.toast:not(.show){
+  display:block !important
+}
+.toast{
+  bottom:50px;
+  right:50px;
+  z-index:7;
+  background-color:#2eaa0f
+}
+
+.remove-cart{
+  color: #0d6eed;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size:20px;
+}
+
+.remove-cart:hover{
+  color:#062349
 }

@@ -16,7 +16,7 @@ export default function Coursetiles(){
                <div className='courses-pg-item skeleton  position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
-                <span className='course-title'>{courses.course_name}</span>
+                <span className='course-title text-light'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec d-block'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
@@ -37,7 +37,7 @@ export default function Coursetiles(){
                <div className='courses-pg-item skeleton position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
-                <span className='course-title '>{courses.course_name}</span>
+                <span className='course-title text-light'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
@@ -58,7 +58,7 @@ export default function Coursetiles(){
                <div className='courses-pg-item skeleton  position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
-                <span className='course-title'>{courses.course_name}</span>
+                <span className='course-title text-light'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
@@ -79,7 +79,7 @@ export default function Coursetiles(){
                <div className='courses-pg-item skeleton  position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
-                <span className='course-title'>{courses.course_name}</span>
+                <span className='course-title text-light'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
@@ -100,7 +100,7 @@ export default function Coursetiles(){
                <div className='courses-pg-item skeleton  position-relative mt-3'>
                 <img src={courses.img} alt="" className='skeleton' />
                 <div className='mt-2 px-2 w-100'>
-                <span className='course-title'>{courses.course_name}</span>
+                <span className='course-title text-light'>{courses.course_name}</span>
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}

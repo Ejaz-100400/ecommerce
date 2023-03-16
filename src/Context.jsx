@@ -14,8 +14,10 @@ function ContextProvider({children}){
     const[displaycourses,setdisplaycourses]=React.useState([])
     const[categorytype,setcategorytype]=React.useState([])
     const[query,setquery]=React.useState('')
-    const[searchdata,setsearchdata]=React.useState([])
-    const[load,setload]=React.useState(false)
+    const[searchdata,setsearchdata]=React.useState([]);
+    const[cartalert,setcartalert]=React.useState(false);
+    const[cart,setcart]=React.useState([]);
+    const[load,setload]=React.useState(false);
 
     function handletheme(){
         setlight(prev=>!prev)
@@ -23,7 +25,8 @@ function ContextProvider({children}){
     
     function Login(email,password){
     return auth.createUserWithEmailAndPaasword(email,password)
-}
+    }
+
 React.useEffect(()=>{
     fetch('http://localhost:8050/PopCateg').
     then(response => response.json())
@@ -64,6 +67,8 @@ function handleSearch(){
     .then(response => response.json())
     .then(data=>setsearchdata(data.Coursearch))
 }
+
+
 // displaying course category in categories component
 function displaycategory(categname){
     const filtercateg=courses.filter((course=>course.type === categname))
@@ -71,6 +76,27 @@ function displaycategory(categname){
     setcategorytype(filtercateg)
 }
 
+//adding a cart 
+function addtocart(addcourse){
+    if (!cart.some(course => course._id === addcourse._id)) {
+        setcart(prevaddmov => [...prevaddmov, addcourse]);
+        setcartalert(true)
+        setInterval(()=>{
+            setcartalert(false)
+        },5000)
+        window.sessionStorage.setItem('cartlist',addcourse.course_name)
+      }
+}
+console.log(cart)
+//removing a cart
+function removetocart(id){
+    setcart(prev=>prev.filter(course=>course._id !== id))
+    setcartalert(true)
+        setInterval(()=>{
+            setcartalert(false)
+        },3000)
+    window.localStorage.removeItem('cartlist',courses.coursename)
+}
 
 
     return(
@@ -89,6 +115,10 @@ function displaycategory(categname){
             query,
             setquery,
             searchdata,
+            cart,
+            cartalert,
+            addtocart,
+            removetocart,
             load
             }}>
             {children}

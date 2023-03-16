@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../../Context';
 export default function Categories(props){
-  const {categorytype,displaycoursedetail}=React.useContext(Context)
+  const {categorytype,displaycoursedetail,addtocart}=React.useContext(Context)
   const categelements = categorytype.map(categ=>{
     return(
       <div className='toppick-item position-relative d-flex mt-2'>
@@ -24,9 +24,10 @@ export default function Categories(props){
           <Link className='explore-btn px-1 py-2' to={`/userpg/${categ.course_name}`} onClick={()=>displaycoursedetail(categ)}>
               Explore Now!
           </Link>
-          <button className='explore-btn px-2 py-2  d-flex align-items-center'>
-              Add to cart <i class="fa-solid fa-cart-shopping"></i>
+          <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(categ)}>
+            Add to cart <i class="fa-solid fa-cart-shopping"></i>
           </button>
+
       </div>
       </div>
   </div>
