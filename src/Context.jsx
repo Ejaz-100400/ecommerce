@@ -94,7 +94,7 @@ function removetocart(id){
     setcartalert(true)
         setInterval(()=>{
             setcartalert(false)
-        },3000)
+        },5000)
     window.localStorage.removeItem('cartlist',courses.coursename)
 }
 

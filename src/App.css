@@ -467,13 +467,12 @@ border-bottom:1px solid blue ;
   height:650px;
   width:60%;
   margin:60px 30px;
-  border-radius:20px;
   background: linear-gradient(85deg,#7de1259f,#56ae685a);
   overflow-y: scroll;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .user-mainpg-section::-webkit-scrollbar{
-  width:5px;
+  width:4px;
   background-color: #0A171C;
 }
 .user-mainpg-section::-webkit-scrollbar-thumb{
@@ -633,7 +632,6 @@ border-bottom:1px solid blue ;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   touch-action: manipulation;
-  will-change: transform;
 }
 .explore-btn:disabled {
   pointer-events: none;
@@ -773,10 +771,12 @@ border-bottom:1px solid blue ;
 }
 
 .remove-cart{
-  color: #0d6eed;
+  color: #d111e2;
   cursor: pointer;
   transition: all 0.4s ease;
   font-size:20px;
+  font-weight:600;
+  
 }
 
 .remove-cart:hover{
