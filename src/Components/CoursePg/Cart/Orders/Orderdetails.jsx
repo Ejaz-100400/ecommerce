@@ -70,6 +70,18 @@ export default function Orderdetails(props){
           </div>
           <div className='payment-sec position-fixed w-100 p-2'>
             <h4>Payment Method</h4>
+            <form action="">
+            <div>
+      <input type="radio" id="huey" name="drone" value="huey"
+             />
+      <label for="huey">Huey</label>
+    </div>
+
+    <div>
+      <input type="radio" id="dewey" name="drone" value="dewey"/>
+      <label for="dewey">Dewey</label>
+    </div>
+            </form>
           </div>
           </div>
           <div className='order-right container p-2 w-50 position-relative'>
