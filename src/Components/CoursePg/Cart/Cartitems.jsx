@@ -1,5 +1,6 @@
 import React from "react"
 import { Context } from "../../../Context"
+import Orderdetails from "./Orders/Orderdetails";
 export default function Cartitems(){
     const {cart,removetocart}=React.useContext(Context)
     const totalCost = cart.reduce((acc, item) => {
@@ -16,8 +17,8 @@ export default function Cartitems(){
                     <hr />
                     <div className="py-3 d-flex align-items-center justify-content-between flex-wrap  position-relative">
                         <div className="d-flex align-items-center gap-3 w-50">
-                            <img src={cartitem.img} width='200' alt={cartitem.course_name} />
-                            <h4>{cartitem.course_name}</h4>
+                            <img src={cartitem.img} width='100' alt={cartitem.course_name} />
+                            <h5>{cartitem.course_name}</h5>
                         </div>
                         <div className="d-flex align-items-center gap-3 w-25 justify-content-between">
                             <span className="remove-cart"  onClick={()=>removetocart(cartitem._id)}>Remove</span>
@@ -36,9 +37,7 @@ export default function Cartitems(){
                 <h3 className="text-uppercase">Total cost</h3>
                 <h2>₹{totalCost}</h2>
                 </div>
-                <button className='cart-btn px-2 py-2 w-25 mt-5 d-flex align-items-center justify-content-center'>
-                    <span>Checkout</span>
-                 </button>  
+                <Orderdetails totalCost={totalCost}/>
                 </>
             }
         </div>

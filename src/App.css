@@ -445,7 +445,6 @@ border-bottom:1px solid blue ;
   top:-10%;
   font-size: 20px;
   padding:18px 26px;
-  z-index:4;
   border:transparent;
   transition: all 0.2s ease-in-out;
 }
@@ -781,4 +780,53 @@ border-bottom:1px solid blue ;
 
 .remove-cart:hover{
   color:#062349
+}
+
+
+/* Orders Component */
+
+.modal-backdrop {
+  background-color: #000000ae ;
+  backdrop-filter: blur(3px);
+}
+
+.order-modal{
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+position:absolute;
+background-image:linear-gradient(85deg,#76bb39,#56ae68);
+width:60%;
+height:70%;
+border-radius:10px;
+}
+
+.back-btn{
+  bottom:10px;
+  right:10px;
+  background:linear-gradient(73deg,rgba(224, 51, 51, 0.895),rgb(241, 61, 52),rgb(195, 59, 35)) !important;
+  color:white;
+}
+.order-cart-items{
+  height:300px;
+  overflow-y: scroll;
+}
+.order-cart-items::-webkit-scrollbar{
+  width:4px;
+}
+.order-cart-items::-webkit-scrollbar-thumb{
+  width:8px;
+  background-color: #000000;
+}
+.payment-sec{
+  z-index:5;
+}
+
+.order-right{
+  background-color: wheat !important;
+  border-radius: 10px;
+}
+
+.cost{
+  font-size:26px;
 }

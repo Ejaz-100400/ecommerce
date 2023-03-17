@@ -6,7 +6,7 @@ import {Navigation} from 'swiper';
 import { Context } from '../../Context';
 import { Link } from 'react-router-dom';
 export default function Coursetiles(){
-    const{courses,displaycoursedetail,displaycourses}=React.useContext(Context)
+    const{courses,displaycoursedetail,displaycourses,addtocart}=React.useContext(Context)
     console.log(displaycourses)
     
     // all courses
@@ -20,7 +20,12 @@ export default function Coursetiles(){
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec d-block'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
-                <Link className=' mt-2 explore-btn px-1 py-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                <div className='d-flex align-items-center gap-3'>
+                <Link className='explore-btn px-1 py-2 ' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                  <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(courses)}>
+                        Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                  </button>   
+                </div>
                 </div>
                 <div>
                 
@@ -41,9 +46,14 @@ export default function Coursetiles(){
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
-                    <Link className='explore-btn px-1 py-2 mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                <div className='d-flex align-items-center gap-3'>
+                <Link className='explore-btn px-1 py-2 ' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                  <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(courses)}>
+                        Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                  </button>   
                 </div>
-                <div>
+
+</div>                <div>
                 
                 </div>
                </div>
@@ -62,9 +72,14 @@ export default function Coursetiles(){
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
-                    <Link className='explore-btn px-1 py-2  mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                <div className='d-flex align-items-center gap-3'>
+                <Link className='explore-btn px-1 py-2 ' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                  <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(courses)}>
+                        Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                  </button>   
                 </div>
-                <div>
+
+</div>                <div>
                 
                 </div>
                </div>
@@ -83,9 +98,14 @@ export default function Coursetiles(){
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
-                    <Link className='explore-btn px-1 py-2  mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                <div className='d-flex align-items-center gap-3'>
+                <Link className='explore-btn px-1 py-2 ' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                  <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(courses)}>
+                        Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                  </button>   
                 </div>
-                <div>
+
+</div>                <div>
                 
                 </div>
                </div>
@@ -104,9 +124,14 @@ export default function Coursetiles(){
                 </div>
                 <div className='mt-1 px-2 position-absolute btn-sec'>
                 {/* <span className='fw-bold'>₹{courses.cost}</span> */}
-                    <Link className='explore-btn px-1 py-2 w-100 mt-2' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                <div className='d-flex align-items-center gap-3'>
+                <Link className='explore-btn px-1 py-2 ' to={`/userpg/${courses.course_name}`} onClick={()=>displaycoursedetail(courses)}>Explore Now!</Link>
+                  <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(courses)}>
+                        Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                  </button>   
                 </div>
-                <div>
+
+</div>                <div>
                 
                 </div>
                </div>
