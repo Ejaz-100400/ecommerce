@@ -14,7 +14,7 @@ export default function MainPg(props){
     const [carousel,setcarousel]=React.useState([])
 
     React.useEffect(()=>{
-        fetch('http://localhost:8050/Carousel').
+        fetch('https://ecommerce-backend-rosy.vercel.app/Carousel').
         then(response => response.json())
         .then(data=>setcarousel(data.Carousel))
     },[])

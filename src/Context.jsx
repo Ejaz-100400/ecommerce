@@ -33,7 +33,7 @@ function ContextProvider({children}){
     }
 
 React.useEffect(()=>{
-    fetch('http://localhost:8050/PopCateg').
+    fetch('https://ecommerce-backend-rosy.vercel.app/PopCateg').
     then(response => response.json())
     .then(data=>setcourses(data.PopCateg))
 },[])
@@ -68,7 +68,7 @@ function handleSearch(){
     setInterval(()=>{
         setload(false)
     },2000)
-    fetch(`http://localhost:8050/search/${query}`)
+    fetch(`https://ecommerce-backend-rosy.vercel.app/search/${query}`)
     .then(response => response.json())
     .then(data=>setsearchdata(data.Coursearch))
 }

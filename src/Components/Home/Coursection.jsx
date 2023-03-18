@@ -11,13 +11,13 @@ export default function Coursection(){
   const[homecateg,sethomecateg]=React.useState([])
   const[popcateg,setpopcateg]=React.useState([])
   React.useEffect(() =>{
-    fetch('http://localhost:8050/CourseCateg')
+    fetch('https://ecommerce-backend-rosy.vercel.app/CourseCateg')
     .then(Response=>Response.json())
     .then(data=>sethomecateg(data.HomeCateg))
   },[]);
 
   React.useEffect(() =>{
-    fetch('http://localhost:8050/PopCateg')
+    fetch('https://ecommerce-backend-rosy.vercel.app/PopCateg')
     .then(Response=>Response.json())
     .then(data=>setpopcateg(data.PopCateg))
   },[]);
