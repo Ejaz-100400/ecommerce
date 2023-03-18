@@ -15,7 +15,7 @@ app.use((req,res,next)=>{
     next();
 })
 app.use(express.json())
-app.use('/',routes);
+app.use('/',routes)
 
 mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(client =>{
