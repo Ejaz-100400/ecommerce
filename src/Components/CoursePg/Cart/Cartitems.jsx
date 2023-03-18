@@ -6,7 +6,6 @@ export default function Cartitems(){
     const totalCost = cart.reduce((acc, item) => {
         return acc + item.cost;
       }, 0);
-    console.log(totalCost)
     return(
         <div>
             <span>{cart.length} added to the cart</span>

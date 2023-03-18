@@ -17,7 +17,12 @@ function ContextProvider({children}){
     const[searchdata,setsearchdata]=React.useState([]);
     const[cartalert,setcartalert]=React.useState(false);
     const[cart,setcart]=React.useState([]);
+    const[learn,setlearn]=React.useState([]);
     const[load,setload]=React.useState(false);
+    const[paymeth,setpaymeth]=React.useState({
+        payment:''
+    });
+    const[payalert,setpayalert]=React.useState(false);
 
     function handletheme(){
         setlight(prev=>!prev)
@@ -51,7 +56,7 @@ function displaycoursedetail(displaycourses){
 }
 
 React.useEffect(()=>{
-    if(location.pathname!='/userpg/coursename'){
+    if(location.pathname!=='/userpg/coursename'){
         setdisplaycourses(()=>[])
     }
 },[location.pathname])
@@ -87,18 +92,42 @@ function addtocart(addcourse){
         window.sessionStorage.setItem('cartlist',addcourse.course_name)
       }
 }
-console.log(cart)
 //removing a cart
 function removetocart(id){
     setcart(prev=>prev.filter(course=>course._id !== id))
-    setcartalert(true)
-        setInterval(()=>{
-            setcartalert(false)
-        },5000)
     window.localStorage.removeItem('cartlist',courses.coursename)
 }
 
-
+//check payment method
+function handlePaymentMethod(e){
+    const {name, value} = e.target
+    setpaymeth(prevpaymeth=>{
+        return{
+            ...prevpaymeth,
+                [name]: value
+        }
+    })
+}
+//redirecting to the payment section
+function payment(cart){
+    if(!paymeth.payment){
+        setpayalert(true);
+        setInterval(()=>{
+            setpayalert(false);
+        },3000)
+    }
+    else{
+        setload(true);
+        setInterval(()=>{
+        setload(false);
+    },3500)
+    if (!learn.some((course ,i)=> course._id === cart[i]._id)) {
+        setlearn(prevaddmov => [...prevaddmov, cart]);
+        setcart(prev=>[])
+    }
+    }
+}
+console.log(learn)
     return(
         <Context.Provider value={{
             currentuser,
@@ -119,7 +148,12 @@ function removetocart(id){
             cartalert,
             addtocart,
             removetocart,
-            load
+            load,
+            setload,
+             // payment state and functions
+            payment,paymeth,setpaymeth,handlePaymentMethod,payalert,
+            //learn state and functions
+            learn
             }}>
             {children}
         </Context.Provider>

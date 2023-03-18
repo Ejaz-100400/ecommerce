@@ -14,7 +14,7 @@ const customStyles = {
 export default function Orderdetails(props){
       // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
     let subtitle;
-    const {cart} = React.useContext(Context)
+    const {cart,payment,paymeth,setpaymeth,handlePaymentMethod} = React.useContext(Context)
     const [modalIsOpen, setIsOpen] = React.useState(false);
   
     function openModal() {
@@ -26,7 +26,7 @@ export default function Orderdetails(props){
       subtitle.style.color = '#f00';
     }
   
-    function closeModal() {
+    function closeModal(e) {
       setIsOpen(false);
     }
 
@@ -72,14 +72,14 @@ export default function Orderdetails(props){
             <h4>Payment Method</h4>
             <form action="">
             <div>
-      <input type="radio" id="huey" name="drone" value="huey"
+      <input type="radio" id="upi" name="payment" value="upi" checked={paymeth.payment==='upi'} onChange={(e)=>handlePaymentMethod(e)}
              />
-      <label for="huey">Huey</label>
+      <label for="upi">UPI Payment</label>
     </div>
 
     <div>
-      <input type="radio" id="dewey" name="drone" value="dewey"/>
-      <label for="dewey">Dewey</label>
+      <input type="radio" id="credeb" name="payment" value="credeb" checked={paymeth.payment==='credeb'} onChange={(e)=>handlePaymentMethod(e)}/>
+      <label for="credeb">Credit/ Debit Card Payment</label>
     </div>
             </form>
           </div>
@@ -90,7 +90,7 @@ export default function Orderdetails(props){
               <span>Total Price</span> 
               <span className='mx-5 mt-5 cost'>₹{props.totalCost}</span>
               <hr />
-              <button className='explore-btn px-2 py-3 w-100 d-flex justify-content-center mt-3'>
+              <button className='explore-btn px-2 py-3 w-100 d-flex justify-content-center mt-3' onClick={()=>payment(cart)}>
                 <span> Proceed</span></button>
             </div>
           </div>

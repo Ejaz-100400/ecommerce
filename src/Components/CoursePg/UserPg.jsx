@@ -5,12 +5,13 @@ import MainPg from './MainPg'
 import Coursec from './Coursec'
 import Categories from './Category/Categories';
 import SearchCourse from './Search/SearchCourse';
+import Learn from './Learn/Learn';
 import Cart from './Cart/Cart';
 import UserHeader from './UserHeader'
 import Coursedetail from './Coursedetail/Coursedetail';
 import { Context } from '../../Context'
 export default function CoursePg(){
-    const{light,handletheme,cartalert,cart}=React.useContext(Context)
+    const{light,handletheme,cartalert,cart,load,payalert}=React.useContext(Context)
     return(
         <div className='user-homepg-section position-relative d-flex gap-1' id={light?'light':'dark'}>
 
@@ -20,20 +21,35 @@ export default function CoursePg(){
                 <i className="fa-solid fa-sun"  onClick={()=>handletheme()}></i>}
             </div>
 
-            {/* cart alert */}
-            {cartalert?<div className="toast position-absolute" role="alert" aria-live="assertive" aria-atomic="true">
-                <div className="toast-header">
-                    <strong className="me-auto">You've got a message</strong>
-                    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            <div class="toast-body">
-                {cart.course_name} is added to the cart!
+            {/* loader controller */}
+            <div className="load-controller position-absolute" style={{display:load?'block':'none'}}>
+              <div className='load-sec position-absolute'>
+              <div class="spinner"></div>
+              </div>
             </div>
+
+
+            {/* cart alert */}
+
+            {cartalert?<div className="toast position-fixed w-25" role="alert" aria-live="assertive" aria-atomic="true">
+              {cart.map(cart=>{
+                return(
+                    <div class="toast-body">
+                    <span className='fw-bold text-dark'>{cart.course_name}</span> is added to your cart
+                    </div>
+                )
+              })}
             </div>:''}
-            
-            {/* {
-                cartalert?
-            } */}
+
+            {/* payment alert */}
+            {payalert?<div className="toast position-fixed w-25" role="alert" id='red-alert' aria-live="assertive" aria-atomic="true">
+                    <div class="toast-body">
+                    Please choose a payment method
+                    </div>
+            </div>:''}
+
+
+
         
         <UserHeader light={light}/>
         <Routes >
@@ -42,6 +58,7 @@ export default function CoursePg(){
         <Route path='/categ/:categ_name' element={<Categories light={light}/>}/>
         <Route path='/search' element={<SearchCourse light={light} />} />
         <Route path='/cart' element={<Cart light={light}/>}/>
+        <Route path='/learn' element={<Learn light={light}/>}/>
         <Route path={`/:course_name`} element={<Coursedetail light={light}/>}/>
         </Routes> 
         </div>
