@@ -16,7 +16,7 @@ export default function SearchCourse(props){
             </div>:
             searchdata.map(searchitem=>{
                 return(
-                <div className='courses-pg-item skeleton card position-relative mt-3 square xyz-in' id='searchcourse-item'>
+                <div className='courses-pg-item skeleton card position-relative mt-3 square xyz-in' id='learncourse-item'>
                     <img src={searchitem.img} alt="" className='skeleton' />
                     <div className='mt-2 px-2 w-100'>
                         <span className='course-title text-light'>{searchitem.course_name}</span>

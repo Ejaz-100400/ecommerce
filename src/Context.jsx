@@ -17,6 +17,7 @@ function ContextProvider({children}){
     const[searchdata,setsearchdata]=React.useState([]);
     const[cartalert,setcartalert]=React.useState(false);
     const[cart,setcart]=React.useState([]);
+    const[gocartalert,setgocartalert]=React.useState(false);
     const[learn,setlearn]=React.useState([]);
     const[load,setload]=React.useState(false);
     const[paymeth,setpaymeth]=React.useState({
@@ -89,6 +90,7 @@ function addtocart(addcourse){
         setInterval(()=>{
             setcartalert(false)
         },5000)
+        setgocartalert(true) 
         window.sessionStorage.setItem('cartlist',addcourse.course_name)
       }
 }
@@ -96,6 +98,7 @@ function addtocart(addcourse){
 function removetocart(id){
     setcart(prev=>prev.filter(course=>course._id !== id))
     window.localStorage.removeItem('cartlist',courses.coursename)
+    setgocartalert(true)
 }
 
 //check payment method
@@ -121,10 +124,8 @@ function payment(cart){
         setInterval(()=>{
         setload(false);
     },3500)
-    if (!learn.some((course ,i)=> course._id === cart[i]._id)) {
         setlearn(prevaddmov => [...prevaddmov, cart]);
         setcart(prev=>[])
-    }
     }
 }
 console.log(learn)
@@ -144,12 +145,8 @@ console.log(learn)
             query,
             setquery,
             searchdata,
-            cart,
-            cartalert,
-            addtocart,
-            removetocart,
-            load,
-            setload,
+            cart,cartalert,gocartalert,addtocart,removetocart,
+            load,setload,
              // payment state and functions
             payment,paymeth,setpaymeth,handlePaymentMethod,payalert,
             //learn state and functions
