@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { Context } from "../../../Context"
+import Learnimg from "./../../../Imgs/learn.png"
 export default function Learn(){
     const {learn,categorytype,displaycoursedetail}=React.useContext(Context)
     return(
@@ -9,9 +10,9 @@ export default function Learn(){
         <h3>My Learning</h3>
         <div className="d-flex flex-wrap  gap-2 mt-4">
         {
-            !learn.length?<div className="d-flex  flex-column align-items-center  justify-content-center w-100">
+            !learn.length?<div className="d-flex  flex-column align-items-center  justify-content-center w-100 mt-5">
                 <h4>Purchase your best preferenced course and start Learning!</h4>
-                <img src="https://o.remove.bg/downloads/4425b8fd-5474-43fc-8d0f-2dba72f4bff4/ee5603332e58b2ed7f10674d23287842-removebg-preview.png" alt=""  width='500'/>
+                <img src={Learnimg} alt=""  width='500'/>
                 </div>
             :learn.map(learn=>{
                 return(

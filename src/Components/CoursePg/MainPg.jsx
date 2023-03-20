@@ -11,7 +11,12 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 export default function MainPg(props){
     const{randompick,displaycoursedetail,addtocart,load,cart,learn}=React.useContext(Context)
+
     const [carousel,setcarousel]=React.useState([])
+
+    // Load the username from sessionStorage
+    const username = sessionStorage.getItem('username');
+
 
     React.useEffect(()=>{
         fetch('https://ecommerce-backend-rosy.vercel.app/Carousel').
@@ -46,7 +51,6 @@ export default function MainPg(props){
             </SwiperSlide>
         )
     })
-
     return(
         <>
         <main className='user-mainpg-section  px-3 py-4 container' id={props.light?'dark':'light'}>
@@ -107,7 +111,7 @@ export default function MainPg(props){
                 <div className="prof-img">
                     <img src='https://cdn-icons-png.flaticon.com/512/149/149071.png' alt="" />
                 </div>
-                <h6>Username</h6>
+                <h6 className="mt-2">{username}</h6>
                 </div>
                 <div className="prof-user-lett  mt-4">
                     <div className="text-center d-flex justify-content-between align-items-center py-1">
@@ -135,8 +139,8 @@ export default function MainPg(props){
                     <li className="py-1">Payment Methods</li>
                     <li className="py-1">Subscriptions</li>
                     <li className="py-1">Purchase History</li>
-                    <Link className="text-decoration-none" to={"/"}>
-                    <li className="py-1 text-light">Sign Out</li>
+                    <Link className="text-decoration-none text-danger fw-bold" to={"/"} onClick={()=>sessionStorage.removeItem('username')}>
+                    <li className="py-1 text-danger">Sign Out</li>
                     </Link>
                 </ul>
             </div>

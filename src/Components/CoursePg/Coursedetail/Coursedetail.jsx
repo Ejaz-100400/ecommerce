@@ -4,7 +4,6 @@ export default function Coursedetail(props){
     const {displaycourses}=React.useContext(Context);
     const coursestored=sessionStorage.getItem('courses')
     const coursextr=JSON.parse(coursestored)
-    console.log(coursextr)
     // const uniqueContent = Array.from(new Set(coursextr.content.map((item) => item)));
     // console.log(uniqueContent)
 

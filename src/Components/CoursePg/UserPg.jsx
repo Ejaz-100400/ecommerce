@@ -11,11 +11,14 @@ import UserHeader from './UserHeader'
 import Coursedetail from './Coursedetail/Coursedetail';
 import { Context } from '../../Context'
 export default function CoursePg(){
-    const{light,handletheme,cartalert,cart,load,payalert}=React.useContext(Context)
+    const{light,handletheme,cartalert,cart,load,payalert,emailref}=React.useContext(Context)
+    // Save the emailref value to localStorage
+    sessionStorage.setItem('username', emailref.split('@')[0]);
     return(
         <div className='user-homepg-section position-relative d-flex gap-1' id={light?'light':'dark'}>
-
             {/* theme controller */}   
+            <div className='position-absolute username'>
+            </div>
             <div className='theme-controller position-absolute'>
                 {light? <i className="fa-solid fa-moon text-dark" onClick={()=>handletheme()}></i>:
                 <i className="fa-solid fa-sun"  onClick={()=>handletheme()}></i>}
@@ -53,7 +56,7 @@ export default function CoursePg(){
         
         <UserHeader light={light}/>
         <Routes >
-        <Route path='/' element={<MainPg light={light} className='mt-5'/>}/>
+        <Route path='/' element={<MainPg light={light} emailref={emailref} className='mt-5'/>}/>
         <Route path='/coursec' element={<Coursec light={light}/>}/>
         <Route path='/categ/:categ_name' element={<Categories light={light}/>}/>
         <Route path='/search' element={<SearchCourse light={light} />} />

@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import { Context } from "../../../Context"
+import Cartimg from "./../../../Imgs/cart.png"
 import Orderdetails from "./Orders/Orderdetails";
 export default function Cartitems(){
     const {cart,removetocart}=React.useContext(Context)
@@ -12,7 +13,7 @@ export default function Cartitems(){
             <span>{cart.length} added to the cart</span>
             {!cart.length?<div className="d-flex  flex-column align-items-center  justify-content-center w-100 mt-5">
                 <h4>Choose your best course & Order Now</h4>
-                <img src="https://o.remove.bg/downloads/a52a3bd2-8b43-4ac9-944f-2a0bfb4d561e/59c8c54fb59d93c5cbe98542ea195f43-removebg-preview.png" alt=""  width='500'/>
+                <img src={Cartimg} alt=""  width='500'/>
                 </div>:
              cart.map(cartitem=>{
                 return(

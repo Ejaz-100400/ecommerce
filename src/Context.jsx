@@ -1,37 +1,56 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
-import { auth } from './firebase'
+import { auth} from './firebase'
 const Context = React.createContext()
 export function useAuth(){
     return React.useContext(Context)
 }
 function ContextProvider({children}){
+    const nameref= React.useState('')
+    const [emailref,setemailref]= React.useState('')
+    const [passwordref,setpasswordref]=React.useState()
+    const[emailalert,setemailalert]=React.useState(true)
+    const[pwdalert,setpwdalert]=React.useState(true)
+    
     const location = useLocation();
     const[currentuser,setcurrentuser]=React.useState()
+
     const[courses,setcourses]=React.useState([])
     const[randompick,setrandompick]=React.useState([])
+
     const[light,setlight]=React.useState(false)
+
     const[displaycourses,setdisplaycourses]=React.useState([])
+
     const[categorytype,setcategorytype]=React.useState([])
+
     const[query,setquery]=React.useState('')
     const[searchdata,setsearchdata]=React.useState([]);
+
     const[cartalert,setcartalert]=React.useState(false);
     const[cart,setcart]=React.useState([]);
     const[gocartalert,setgocartalert]=React.useState(false);
+
     const[learn,setlearn]=React.useState([]);
     const[load,setload]=React.useState(false);
+
     const[paymeth,setpaymeth]=React.useState({
         payment:''
     });
     const[payalert,setpayalert]=React.useState(false);
 
+    
+    
     function handletheme(){
         setlight(prev=>!prev)
     }
     
-    function Login(email,password){
-    return auth.createUserWithEmailAndPaasword(email,password)
-    }
+    // function Login(email,password){
+    // return auth.createUserWithEmailAndPaasword(email,password)
+    // }
+
+
+
 
 React.useEffect(()=>{
     fetch('https://ecommerce-backend-rosy.vercel.app/PopCateg').
@@ -128,11 +147,11 @@ function payment(cart){
         setcart(prev=>[])
     }
 }
-console.log(learn)
     return(
         <Context.Provider value={{
             currentuser,
-            Login,
+            // Login,
+            nameref,emailref,passwordref,emailalert,pwdalert,setemailalert,setpwdalert,setpasswordref,setemailref,
             randompick,
             courses,
             light,
