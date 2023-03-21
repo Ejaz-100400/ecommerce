@@ -89,12 +89,12 @@ export default function MainPg(props){
                     <span className=" text-dark">{randompick.duration}</span>
                     </div>
                  </div>
-                 <div className='course-btns d-flex gap-3 align items-center mt-3'>
-                        <Link className='explore-btn px-1 py-2' to={`/userpg/${randompick.course_name}`} onClick={()=>displaycoursedetail(randompick)}>
-                            Explore Now!
+                 <div className='course-btns d-flex flex-wrap gap-3 align items-center mt-3'>
+                        <Link className='explore-btn px-1 py-2 d-flex align-items-center justify-content-center' id='mob-explore' to={`/userpg/${randompick.course_name}`} onClick={()=>displaycoursedetail(randompick)}>
+                            <span> Explore Now!</span> 
                         </Link>
-                         <button className='cart-btn px-2 py-2 d-flex align-items-center' onClick={()=>addtocart(randompick)}>
-                            Add to cart <i class="fa-solid fa-cart-shopping"></i>
+                         <button className='cart-btn px-2 py-2 d-flex align-items-center justify-content-center'  id='mob-explore' onClick={()=>addtocart(randompick)}>
+                            <span>Add to cart</span> <i class="fa-solid fa-cart-shopping"></i>
                          </button>   
                     </div>
                     </div>
@@ -139,7 +139,7 @@ export default function MainPg(props){
                     <li className="py-1">Payment Methods</li>
                     <li className="py-1">Subscriptions</li>
                     <li className="py-1">Purchase History</li>
-                    <Link className="text-decoration-none text-danger fw-bold" to={"/"} onClick={()=>sessionStorage.removeItem('username')}>
+                    <Link className="text-decoration-none text-danger fw-bold" to={"/"} onClick={()=>sessionStorage.removeItem('user')}>
                     <li className="py-1 text-danger">Sign Out</li>
                     </Link>
                 </ul>
