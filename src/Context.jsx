@@ -6,7 +6,6 @@ export function useAuth(){
     return React.useContext(Context)
 }
 function ContextProvider({children}){
-    const nameref= React.useState('')
     const [emailref,setemailref]= React.useState('')
     const [passwordref,setpasswordref]=React.useState()
     const[emailalert,setemailalert]=React.useState(true)
@@ -151,7 +150,7 @@ function payment(cart){
         <Context.Provider value={{
             currentuser,
             // Login,
-            nameref,emailref,passwordref,emailalert,pwdalert,setemailalert,setpwdalert,setpasswordref,setemailref,
+            emailref,passwordref,emailalert,pwdalert,setemailalert,setpwdalert,setpasswordref,setemailref,
             randompick,
             courses,
             light,

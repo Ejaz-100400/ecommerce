@@ -4,8 +4,8 @@ export default function Coursedetail(props){
     const {displaycourses}=React.useContext(Context);
     const coursestored=sessionStorage.getItem('courses')
     const coursextr=JSON.parse(coursestored)
-    // const uniqueContent = Array.from(new Set(coursextr.content.map((item) => item)));
-    // console.log(uniqueContent)
+    const uniqueContent = Array.from(new Set(coursextr.content.map((item) => item)));
+    console.log(uniqueContent)
 
     const cours =<>
     <section className='course-maintitle d-flex gap-1  container-fluid position-relative skeleton'>
@@ -36,25 +36,25 @@ export default function Coursedetail(props){
         <h2 className=''>Course Contents</h2>
         {
 
-            // uniqueContent.map(content=>{
-            //     return(
-            //         <div class="accordion w-75 mt-3" id="accordionExample">
-            //             <div class="accordion-item">
-            //                 <h2 class="accordion-header" id="headingOne">
-            //                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${content.id}`} aria-expanded="true" aria-controls={`collapse${content.id}`}>
-            //                         {content.name}
-            //                     </button>
-            //                 </h2>
-            //             <div id={`collapse${content.id}`} class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            //         <div class="accordion-body">
-            //             <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            //         </div>
-            //         </div>
-            //     </div>
-            //     </div>
-            //     // <span className='py-1'>{content.name}</span>
-            //     )
-            // })
+            uniqueContent.map(content=>{
+                return(
+                    <div class="accordion w-75 mt-3" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${content.id}`} aria-expanded="true" aria-controls={`collapse${content.id}`}>
+                                    {content.name}
+                                </button>
+                            </h2>
+                        <div id={`collapse${content.id}`} class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                    </div>
+                </div>
+                </div>
+                // <span className='py-1'>{content.name}</span>
+                )
+            })
         }
     </section>
         </>

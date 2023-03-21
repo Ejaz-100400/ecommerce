@@ -15,7 +15,7 @@ export default function MainPg(props){
     const [carousel,setcarousel]=React.useState([])
 
     // Load the username from sessionStorage
-    const username = sessionStorage.getItem('username');
+    const username = sessionStorage.getItem('user');
 
 
     React.useEffect(()=>{

@@ -13,7 +13,6 @@ import { Context } from '../../Context'
 export default function CoursePg(){
     const{light,handletheme,cartalert,cart,load,payalert,emailref}=React.useContext(Context)
     // Save the emailref value to localStorage
-    sessionStorage.setItem('username', emailref.split('@')[0]);
     return(
         <div className='user-homepg-section position-relative d-flex gap-1' id={light?'light':'dark'}>
             {/* theme controller */}   
