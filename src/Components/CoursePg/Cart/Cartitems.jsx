@@ -20,11 +20,11 @@ export default function Cartitems(){
                     <>
                     <hr />
                     <div className="py-3 d-flex align-items-center justify-content-between flex-wrap  position-relative">
-                        <div className="d-flex align-items-center gap-3 w-50">
+                        <div className="d-flex flex-wrap align-items-center gap-3">
                             <img src={cartitem.img} width='100' alt={cartitem.course_name} />
                             <h5>{cartitem.course_name}</h5>
                         </div>
-                        <div className="d-flex align-items-center gap-3 w-25 justify-content-between">
+                        <div className="d-flex flex-wrap align-items-center gap-3 w-25 justify-content-between">
                             <span className="remove-cart"  onClick={()=>removetocart(cartitem._id)}>Remove</span>
                             <div className="d-flex align-items-center gap-1">
                             <h3>₹{cartitem.cost}</h3><i class="fa-solid fa-tag"></i>

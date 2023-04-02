@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Context } from "../../Context"
 export default function UserHeader(props){
-    const {courses,displaycategory,setload}=React.useContext(Context)
+    const {courses,displaycategory,setload,learn}=React.useContext(Context)
     function handleload(){
         setload(true)
         setInterval(()=>{
@@ -46,6 +46,7 @@ export default function UserHeader(props){
                 <Link onClick={handleload}to={'/userpg/search'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
                 <li className='d-flex gap-2 align-items-center'><i class="fa-solid fa-magnifying-glass"></i>Search Courses</li>
                 </Link>
+
                 <Link onClick={handleload}to={'/userpg/learn'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
                 <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-arrow-up-right-dots"></i>My Learning</li>
                 </Link>
@@ -96,9 +97,12 @@ export default function UserHeader(props){
                 <Link onClick={handleload}to={'/userpg/search'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
                 <li className='d-flex gap-2 align-items-center'><i class="fa-solid fa-magnifying-glass"></i>Search Courses</li>
                 </Link>
+                <Link onClick={handleload}to={'/userpg/learn'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
                 <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-arrow-up-right-dots"></i>My Learning</li>
+                </Link>
+                <Link onClick={handleload}to={'/userpg/cart'} className={`text-decoration-none ${props.light?'text-dark':'text-light'}`}>
                 <li className='d-flex gap-2 align-items-center'><i className="fa-solid fa-cart-shopping"></i>My Carts</li>
-                <li className='d-flex gap-2 align-items-center'></li>
+                </Link> 
             </ul>
             <div className={`prem-card d-flex justify-content-center align-items-center px-2 py-2 position-relative`}>
                 <button className='prem-btn position-absolute'>

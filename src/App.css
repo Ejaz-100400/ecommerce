@@ -154,7 +154,6 @@ body::-webkit-scrollbar{
 .home-main-sec{
   min-height:100vh;
   padding-top:100px;
-  
 }
 .main{
   z-index:4;
@@ -168,7 +167,6 @@ body::-webkit-scrollbar{
 .main-sec>h1{
   font-size:65px;
 }
-
 
 .form-control,.getstarted{
   border-radius:0px !important;
@@ -556,12 +554,9 @@ border-bottom:1px solid blue ;
 }
 
 .toppick-item{
-  min-width:100%;
   border:1px solid black;
-  height:200px;
   background-color: wheat;
   z-index:4;
-  
 }
 .course-img{
   width:40%;
@@ -661,7 +656,7 @@ border-bottom:1px solid blue ;
     width:5px;
     background-color: #0A171C;
   }
-  .toppick-item{
+  #toppick-item{
     flex-wrap: wrap;
     height:40px;
     background-color: wheat;
@@ -795,8 +790,7 @@ border-bottom:1px solid blue ;
 
 @media(max-width:978px){
   .courses-pg-item{
-    width:200px;
-    height:240px;
+    width:250px;
   }
 }
 
@@ -970,8 +964,8 @@ border-radius:10px;
 /* Learn component */
 
 #learncourse-item{
-  width:250px;
-  height:290px;
+  width:220px;
+  height:280px;
 }
 
 .progress-sec{

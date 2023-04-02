@@ -5,7 +5,7 @@ export default function Categories(props){
   const {categorytype,displaycoursedetail,addtocart}=React.useContext(Context)
   const categelements = categorytype.map(categ=>{
     return(
-      <div className='toppick-item position-relative d-flex mt-2'>
+      <div className='toppick-item position-relative d-flex flex-wrap mt-2'>
       <div className='course-img skeleton-courseimg' style={{backgroundImage:`linear-gradient(115deg,rgba(0, 0, 0, 0.902),rgba(0, 0, 0, 0.521),rgba(0, 0, 0, 0.607)),url(${categ.img})`}}>
       </div>
       <div className='course-desc p-3'>
@@ -35,7 +35,7 @@ export default function Categories(props){
   })
     return(
         
-        <main className='user-mainpg-section  px-3 py-4 container w-100' id={props.light?'dark':'light'}>
+        <main className='user-mainpg-section  px-3 py-4 container w-100 d-flex flex-column gap-2' id={props.light?'dark':'light'}>
           {categelements}
         </main>
     )

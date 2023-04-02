@@ -33,9 +33,9 @@ export default function MainPg(props){
         return(
             <SwiperSlide className="swip">
                 <div className="userbanner-sec container position-relative mt-4 skeleton"  style={{backgroundImage:`linear-gradient(115deg,rgba(0, 0, 0, 0.902),rgba(0, 0, 0, 0.521),rgba(0, 0, 0, 0.607)),url(${item.img})`}}>           
-                 <div className="banner-title position-absolute" style={{bottom:'30px',left:'50px'}}>
+                 <div className="banner-title d-flex flex-column justify-content-center pt-5 align-items-center" style={{bottom:'30px',left:'50px'}}>
                  <h2 className="text-light">{item.course_name}</h2>
-                 <div className="mt-3 d-flex gap-3">
+                 {/* <div className="mt-3 d-flex gap-3">
                     <div className="d-flex gap-1 align-items-center">
                         <i class="fa-solid fa-star fa-1x" style={{color:'yellow'}}></i>
                         <span className="fw-bold text-light">{item.rating}</span>
@@ -44,8 +44,8 @@ export default function MainPg(props){
                     <i class="fa-solid fa-clock text-light"></i>
                     <span className="fw-bold text-light">{item.duration}</span>
                     </div>
-                 </div>
-                 <button className="explore-btn px-1 py-2 mt-4">Explore Now!</button>
+                 </div> */}
+                 {/* <button className="explore-btn px-1 py-2 mt-4">Explore Now!</button> */}
                  </div>
                  </div>
             </SwiperSlide>
@@ -57,7 +57,7 @@ export default function MainPg(props){
 
             {/* Carousel Section */}
             <section className='carousel-sec'>
-            <h3 className="fw-bold">Our New Courses</h3>
+            <h3 className="fw-bold">Coming Soon!</h3>
             <Swiper
             cssMode={true}
             navigation={true}
@@ -74,7 +74,7 @@ export default function MainPg(props){
             {/* Popular Courses */}
             <section className="user-activities position-relative mt-4 py-3">
                 <h3 className="">Our Top Picks for You</h3>
-                <div className='toppick-item position-relative d-flex mt-2'>
+                <div className='toppick-item position-relative d-flex mt-2' id='toppick-item'>
                     <div className='course-img skeleton-courseimg' style={{backgroundImage:`linear-gradient(115deg,rgba(0, 0, 0, 0.902),rgba(0, 0, 0, 0.521),rgba(0, 0, 0, 0.607)),url(${randompick.img})`}}>
                     </div>
                     <div className='course-desc p-3'>
@@ -122,7 +122,7 @@ export default function MainPg(props){
                     <div className="text-center d-flex justify-content-between align-items-center py-1">
                         <span className="fw-bold">Courses Active</span>
                         <br />
-                        <span>0</span>
+                        <span>{learn.length}</span>
                     </div>
                     <div className="text-center d-flex justify-content-between align-items-center py-1">
                         <span className="fw-bold">Courses Completed</span>
