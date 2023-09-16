@@ -1,4 +1,4 @@
 # E-Learning Website MERN
 
-<img src='public.homepg.png' />
+<img src='public/homepg.png' />
 
