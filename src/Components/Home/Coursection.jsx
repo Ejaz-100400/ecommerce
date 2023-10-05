@@ -11,13 +11,13 @@ export default function Coursection(){
   const[homecateg,sethomecateg]=React.useState([])
   const[popcateg,setpopcateg]=React.useState([])
   React.useEffect(() =>{
-    fetch('https://ecommerce-backend-rosy.vercel.app/CourseCateg')
+    fetch('https://ecommerce-backend-seven-delta.vercel.app/CourseCateg')
     .then(Response=>Response.json())
     .then(data=>sethomecateg(data.HomeCateg))
   },[]);
 
   React.useEffect(() =>{
-    fetch('https://ecommerce-backend-rosy.vercel.app/PopCateg')
+    fetch('https://ecommerce-backend-seven-delta.vercel.app/PopCateg')
     .then(Response=>Response.json())
     .then(data=>setpopcateg(data.PopCateg))
   },[]);

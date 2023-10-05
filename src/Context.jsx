@@ -52,7 +52,7 @@ function ContextProvider({children}){
 
 
 React.useEffect(()=>{
-    fetch('https://ecommerce-backend-rosy.vercel.app/PopCateg').
+    fetch('https://ecommerce-backend-seven-delta.vercel.app/PopCateg').
     then(response => response.json())
     .then(data=>setcourses(data.PopCateg))
 },[])
@@ -87,7 +87,7 @@ function handleSearch(){
     setInterval(()=>{
         setload(false)
     },2000)
-    fetch(`https://ecommerce-backend-rosy.vercel.app/search/${query}`)
+    fetch(`https://ecommerce-backend-seven-delta.vercel.app/search/${query}`)
     .then(response => response.json())
     .then(data=>setsearchdata(data.Coursearch))
 }

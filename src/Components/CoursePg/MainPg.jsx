@@ -19,7 +19,7 @@ export default function MainPg(props){
 
 
     React.useEffect(()=>{
-        fetch('https://ecommerce-backend-rosy.vercel.app/Carousel').
+        fetch('https://ecommerce-backend-seven-delta.vercel.app/Carousel').
         then(response => response.json())
         .then(data=>setcarousel(data.Carousel))
     },[])
